@@ -2,44 +2,44 @@
 
 
 Given strings and a list of instructions the message must be decoded using 6 commands
-● DECODE: which will be followed by an encoded message inside of brackets
-○ Ex: DECODE:[dsacd# dsafdw](2)
-○ This will add a string to be decoded to a second queue that contains the messages
-● REPLACE: which will contain two characters separated by a comma inside of brackets
-○ Ex: REPLACE:[s,e](6)
-○ Original string: slsphant
-○ new string: elephant
-○ This will replace all character ‘s’ to character ‘e’ in the front string of the message queue
+ DECODE: which will be followed by an encoded message inside of brackets
+ Ex: DECODE:[dsacd# dsafdw](2)
+ This will add a string to be decoded to a second queue that contains the messages
+ REPLACE: which will contain two characters separated by a comma inside of brackets
+ Ex: REPLACE:[s,e](6)
+ Original string: slsphant
+ new string: elephant
+ This will replace all character ‘s’ to character ‘e’ in the front string of the message queue
 and then move that message to the end of the message queue
-○ Has a priority of 6
-● ADD: which will contain two characters separated by a comma inside of brackets
-○ Ex: ADD:[n,a](4)
-○ original string: bann
-○ New string: banana
-○ This will add an ‘a’ after every ‘n’ in the front string of the message queue and then move
+ Has a priority of 6
+ ADD: which will contain two characters separated by a comma inside of brackets
+ Ex: ADD:[n,a](4)
+ original string: bann
+ New string: banana
+ This will add an ‘a’ after every ‘n’ in the front string of the message queue and then move
 that message to the end of the message queue
-○ And has a priority of 4
-● REMOVE: which will contain a single character inside of brackets
-○ Ex: REMOVE:[v](5)
-○ Original string: mevssvavge
-○ New string: message
-○ This will remove every ‘v’ in the front string of the message queue and then move that
+ And has a priority of 4
+ REMOVE: which will contain a single character inside of brackets
+ Ex: REMOVE:[v](5)
+ Original string: mevssvavge
+ New string: message
+ This will remove every ‘v’ in the front string of the message queue and then move that
 message to the end of the message queue
-○ Has a priority of 5
-● SWAP: which will contain two characters separated by a comma inside of brackets
-○ Ex: SWAP:[n,a](8)
-○ Original string: bnanan
-○ New string: banana
-○ This will turn every ‘n’ into an ‘a’ and every ‘a’ into an ‘n’; in the front string of the
+ Has a priority of 5
+ SWAP: which will contain two characters separated by a comma inside of brackets
+ Ex: SWAP:[n,a](8)
+ Original string: bnanan
+ New string: banana
+ This will turn every ‘n’ into an ‘a’ and every ‘a’ into an ‘n’; in the front string of the
 message queue and then move that message to the end of the message queue
-○ Has a priority of 8
-● BST:
-○ Ex: BST:(4)
-○ This will insert the message at the front of the message queue into the BST, and take it out
+ Has a priority of 8
+ BST:
+ Ex: BST:(4)
+ This will insert the message at the front of the message queue into the BST, and take it out
 of the message queue.
-○ Left and Right child will be based on the length of the message that is being inserted.
+ Left and Right child will be based on the length of the message that is being inserted.
 Shorter length will go left, longer length will go right.
-○ If the message that is being inserted have equal length to one of the nodes in the tree,
+ If the message that is being inserted have equal length to one of the nodes in the tree,
 replace that node’s data with the message that is being inserted.
 The last line in the input will either be “Preorder”, “Inorder”, or “Postorder” (case sensitive) which
 indicate the traversal method for BST.
